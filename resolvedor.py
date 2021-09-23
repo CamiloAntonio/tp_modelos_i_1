@@ -34,7 +34,7 @@ def lector_problema():
 
 def analizador_problema():
     incopatibilidades, tiempos = lector_problema()
-    generador_solucion(incopatibilidades, tiempos)
+    return generador_solucion(incopatibilidades, tiempos)
 
 def generador_solucion(incopatibilidades, tiempos):
     lavados = []
@@ -49,10 +49,11 @@ def generador_solucion(incopatibilidades, tiempos):
             lavados.append([prenda])
             continue
     
-    print(lavados)
+    # print(lavados)
+    return lavados
         
             
         
     
 
-analizador_problema()
+print(analizador_problema())
