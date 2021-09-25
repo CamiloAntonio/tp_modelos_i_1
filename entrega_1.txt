@@ -1,0 +1,22 @@
+El problema pareciera ser un problema de armado, donde se busca minimizar tiempo de lavado.
+La gran complejidad que parece tener es que al armar un lavado, es necesario verificar las compatibilidades de todas las prendas. Hacer esto manuelmente puede ser terriblemente tedioso, asi que parece preciso usar software.
+Primero se busca armar un programa que cumpla los requisitos minimos para encarar el problema, estos son:
+    - Leer el archivo del enunnciado y obtener la informacion necesaria en un formato util.
+    - Generar un algoritmo que en base a la informacion leida, devuelva una solucion compatible (asi no sea optima)
+    - Poder calcular el tiempo total de lavado de la solucion encontrada, para medir el progreso.
+    - Escribir el resultado en un archivo con el formato dado.
+
+De estos items, el unico sobre el que se iterara sera el 2do, buscando optimizar la solucion, e ir midiendo el progreso.
+Hasta ahora ya se cada uno de estos items.
+El primer algoritmo que se probo daba la solucion tribial (una prenda por lavado).
+Esta solucion daba un tiempo total de 133 minutos, el maximo tiempo posible, por lo que cualquier tiempo por abajo de este se considera avance.
+
+El algoritmo que se prueba ahora consisitira en:
+    1. Ordenar las prendas por tiempo de lavado partiendo de la mas costoza.
+    2. Tomar la primer prenda y colocarla en un nuevo lavado conteniendo solo esta prenda.
+    3. Buscar la primer prenda compatible con este lavado y agregarla al nuevo lavado(manteniendo el orden, las mas costozas primero)
+    4. Iterar hasta la ultima prenda.
+    5. Cerrar este lavado y empezar uno nuevo.
+    6. Repetir mismo procedimiento con el nuevo lavado.
+
+Este algoritmo dio un score de 62 minutos. 

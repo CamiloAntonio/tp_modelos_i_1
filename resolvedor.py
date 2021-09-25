@@ -46,7 +46,7 @@ def generador_solucion(incompatibilidades, prendas_ordenadas):
     return lavados
         
 def ordenar_tiempos(tiempos):
-    return list({k: v for k, v in sorted(tiempos.items(), key=lambda x: x[1], reverse=False)}.keys())
+    return list({k: v for k, v in sorted(tiempos.items(), key=lambda x: x[1], reverse=True)}.keys())
 
 
         
@@ -76,7 +76,18 @@ def analizador_problema():
     incompatibilidades, tiempos = lector_problema()
     prendas_ordenadas_por_tiempo = ordenar_tiempos(tiempos)
     solucion =  generador_solucion(incompatibilidades, prendas_ordenadas_por_tiempo) 
+    exportador_resultado(solucion)
     return solucion, calcular_tiempo_total(solucion, tiempos)
+
+def exportador_resultado(lavados):
+    file = open("solucion.txt", "w")
+    lavado_nro = 1
+    for lavado in lavados:
+
+        for prenda in lavado:
+            file.write("" + str(prenda) + " " + str(lavado_nro) + "\n")
+        lavado_nro += 1
+
 
 
 print(analizador_problema())
