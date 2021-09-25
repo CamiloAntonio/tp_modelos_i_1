@@ -46,7 +46,7 @@ def generador_solucion(incompatibilidades, prendas_ordenadas):
     return lavados
         
 def ordenar_tiempos(tiempos):
-    return list({k: v for k, v in sorted(tiempos.items(), key=lambda x: x[1], reverse=True)}.keys())
+    # return list({k: v for k, v in sorted(tiempos.items(), key=lambda x: x[1], reverse=True)}.keys())
 
 
         

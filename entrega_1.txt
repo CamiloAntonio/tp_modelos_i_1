@@ -20,3 +20,9 @@ El algoritmo que se prueba ahora consisitira en:
     6. Repetir mismo procedimiento con el nuevo lavado.
 
 Este algoritmo dio un score de 62 minutos. 
+
+Se descubre que ordenando las prendas por orden decresciente en el tiempo, no empeora mucho el tiempo, pasa de 62 a 69.
+Se descubre sorprendentemente que no ordenando las prendas, mejora el tiempo de 62 a 61.
+Se concluye que ordenarlas no presenta una ventaja en especial.
+Esto podria ser porque, al querer meter en el mismo lavado primero a la prenda con mayor tiempo de lavado, el lavado puede estar perdiendo compatibilidad con otras prendas que sumados sus tiempos resultan en un tiempo mayor que el de la prenda agregada.
+Habra que cambiar el algoritmo para que tenga esto en cuenta.
