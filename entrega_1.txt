@@ -28,3 +28,5 @@ Esto podria ser porque, al querer meter en el mismo lavado primero a la prenda c
 Habra que cambiar el algoritmo para que tenga esto en cuenta.
 
 Se elabora un algoritmo bastante mas complejo pero que no presenta ninguna mejora en el resultado.
+Error, si mejora, sin tener que partir de las prendas ordenadas por tiempo, llega a un score de 61, el mejor hasta ahora.
+Sin embargo, probablemente el resultado este atado al orden justamente, y por algun motivo en este orden aleatorio en el que me llega la informacion da el resultado optimo, y ordenado por tiempos no da el optimo.
