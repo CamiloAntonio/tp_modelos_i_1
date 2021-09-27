@@ -48,8 +48,6 @@ def generador_solucion0(incompatibilidades, prendas_ordenadas):
 
 def generador_solucion(incompatibilidades, prendas_ordenadas):
     lavados = []
-
-    print("llegan", prendas_ordenadas)
      
     if(len(prendas_ordenadas)<=1):
         return [prendas_ordenadas]
@@ -60,7 +58,7 @@ def generador_solucion(incompatibilidades, prendas_ordenadas):
         compatibilidades_con_prenda =  compatibilidades(prenda_principal, incompatibilidades, prendas_ordenadas)
         
         lavados_con_compatibles = generador_solucion(incompatibilidades,compatibilidades_con_prenda) 
-        print("l con com",lavados_con_compatibles)
+ 
         lavado_mas_largo = []
         # for l in lavados_con_compatibles:
         #     t_actual = calcular_tiempo_total(l)
