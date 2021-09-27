@@ -1,4 +1,7 @@
+
+# Lo deje global para poder acceder a esta informacion en todo el modulo
 # def lector_problema():
+
 my_file = open("primer_problema.txt", "r")
 content = my_file.read()
 content_list = content.split("\n")
@@ -58,29 +61,32 @@ def generador_solucion(incompatibilidades, prendas_ordenadas):
         compatibilidades_con_prenda =  compatibilidades(prenda_principal, incompatibilidades, prendas_ordenadas)
         
         lavados_con_compatibles = generador_solucion(incompatibilidades,compatibilidades_con_prenda) 
- 
-        lavado_mas_largo = []
-        # for l in lavados_con_compatibles:
-        #     t_actual = calcular_tiempo_total(l)
-        #     if calcular_tiempo_total(lavado_mas_largo) < t_actual:
-        #         lavado_mas_largo = l
-        nuevo_lavado = lavados_con_compatibles[0]
+
+        nuevo_lavado = elegir_lavado(lavados_con_compatibles)
+        
         for p in nuevo_lavado:
             prendas_ordenadas.pop(prendas_ordenadas.index(p))
 
         nuevo_lavado.append(prenda_principal)
         lavados.append(nuevo_lavado)
 
-    
     return lavados
+
+def elegir_lavado(lavados):
+    return lavados[0]
+    #  Aca queria probar algo pero no hizo falta, pero lo dejo por si lo quiero retomar en otro momento
+    # lavado_mas_largo = []
+    # for l in lavados_con_compatibles:
+    #     t_actual = calcular_tiempo_total(l)
+    #     if calcular_tiempo_total(lavado_mas_largo) < t_actual:
+    #         lavado_mas_largo = l
         
-def ordenar_tiempos(tiempos):
+def ordenar_prendas(tiempos):
+    # Esta linea comentada es la que ordena por tiempos
     # return list({k: v for k, v in sorted(tiempos.items(), key=lambda x: x[1], reverse=True)}.keys())
     return list(tiempos.keys())
 
-
-
-        
+   
 def calcular_tiempo_total(lavados):
     tiempo_total = 0
 
@@ -104,8 +110,8 @@ def prenda_compatible_con_lavado(prenda, lavado, incompatibilidades):
     return True
 
 def analizador_problema():
-    # incompatibilidades, tiempos = lector_problema()
-    prendas_ordenadas_por_tiempo = ordenar_tiempos(tiempos)
+    # Realmente ya no se ordenan por tiempo, pero lo dejo asi por si quiero cambiar el orden en otro momento.
+    prendas_ordenadas_por_tiempo = ordenar_prendas(tiempos)
     solucion =  generador_solucion(incompatibilidades, prendas_ordenadas_por_tiempo) 
     exportador_resultado(solucion)
     return solucion, calcular_tiempo_total(solucion)
