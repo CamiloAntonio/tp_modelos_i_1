@@ -2,7 +2,7 @@
 # Lo deje global para poder acceder a esta informacion en todo el modulo
 # def lector_problema():
 
-my_file = open("primer_problema.txt", "r")
+my_file = open("segundo_problema.txt", "r")
 content = my_file.read()
 content_list = content.split("\n")
     
@@ -83,8 +83,8 @@ def elegir_lavado(lavados):
         
 def ordenar_prendas(tiempos):
     # Esta linea comentada es la que ordena por tiempos
-    # return list({k: v for k, v in sorted(tiempos.items(), key=lambda x: x[1], reverse=True)}.keys())
-    return list(tiempos.keys())
+    return list({k: v for k, v in sorted(tiempos.items(), key=lambda x: x[1], reverse=True)}.keys())
+    # return list(tiempos.keys())
 
    
 def calcular_tiempo_total(lavados):
@@ -117,7 +117,7 @@ def analizador_problema():
     return solucion, calcular_tiempo_total(solucion)
 
 def exportador_resultado(lavados):
-    file = open("solucion.txt", "w")
+    file = open("solucion_2.txt", "w")
     lavado_nro = 1
     for lavado in lavados:
 
