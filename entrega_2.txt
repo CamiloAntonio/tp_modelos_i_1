@@ -1,3 +1,7 @@
 El problema ahora tiene relativamente muchos mas valores, con lo cual el tiempo es mayor, y el algoritmo usado previamente que llegaba a dar la solucion optima, ya no lo da.
 El algoritmo usado previamente ahora da 755. Desconozco aun si es el optimo, pero intentaremos mejorarlo.
 Como se lo habia dejado previamente, este algoritmo no ordenaba las prendas antes de proceder. Solo ordenando las prendas este algoritmo mejora para este problema, mejorando el tiempo dejandolo en 493. Se proseguira buscando mejorarlo.
+
+La logica mediante la cual diseñe el algoritmo creeria que me lleva al optimo, pero evidentemente no lo logra. Aun no ubico el caso en el que el algoritmo que diseñe no toma la decision correcta y no va por el camino optimo. 
+Es dificil descifrarlo con los valores del 2do problema, asi que probare viendo si logro ubicar el caso en el que falla con los datos del 1er problema.
+Una ves que lo ubique, intentare mejorar el algoritmo actual para que tome la decision correcta.
