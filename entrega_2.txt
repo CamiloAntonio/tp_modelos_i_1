@@ -5,3 +5,18 @@ Como se lo habia dejado previamente, este algoritmo no ordenaba las prendas ante
 La logica mediante la cual diseñe el algoritmo creeria que me lleva al optimo, pero evidentemente no lo logra. Aun no ubico el caso en el que el algoritmo que diseñe no toma la decision correcta y no va por el camino optimo. 
 Es dificil descifrarlo con los valores del 2do problema, asi que probare viendo si logro ubicar el caso en el que falla con los datos del 1er problema.
 Una ves que lo ubique, intentare mejorar el algoritmo actual para que tome la decision correcta.
+
+Se descubre un posible caso donde el algoritmo actual no toma la decision correcta.
+El algoritmo actual una vez ordenadas por tiempo decresciente las prendas, toma la mas cara, busca la mas cara de las prendas compatibles con esta primera y le agrega al lavado, y luego repite agarrando la mas cara de las prendas compatibles con el lavado actual.
+El error que induce esto es que existe la posibilidad de que al tomar una prenda, se deje afuera otra prenda que no sea compatible con ninguna otra.
+Ejemplo:
+Se tienen las prendas A con peso 15, B con peso 15, C con peso 10, y D con peso 5.
+A y B no son compatibles, B y D tampoco y C y D tampoco
+El algoritmo podria empezar por la prenda A, luego tomar la C dado que es la compatible mas cara, pero dejaria la D afuera, y los lavados quedarian:
+[A,C], [B], [D] con tiempo total 35
+Cuando lo correcto seria tomar la D, y luego hacer un lavado con B y C obteniendo un resultado final:
+[A,D], [B,C] con tiempo total 30.
+
+Para evitar esto, lo que se deberia hacer es definir un lavado que minimize el tiempo total de lavados que se pueden hacer que las prendas que restan del lavado que se esta formando.
+En principio se me ocurre un algoritmo recursivo que empieze de manera similar partiendo de una prenda y viendo sus prendas compatibles, pero defina que lavado formar "ranqueando" los lavados posibles mediante el mejor resultado que se puede obtener con las prendas restantes fuera del lavado.
+Pareciera tratarse de fuerza bruta, aunque se le podria aplicar back tracking para recortar el orden.
