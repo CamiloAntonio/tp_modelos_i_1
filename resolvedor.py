@@ -59,7 +59,7 @@ def generador_solucion(incompatibilidades, prendas_ordenadas):
         prenda_principal = prendas_ordenadas.pop(0)
 
         compatibilidades_con_prenda =  compatibilidades(prenda_principal, incompatibilidades, prendas_ordenadas)
-        
+        print(prenda_principal, compatibilidades_con_prenda)
         lavados_con_compatibles = generador_solucion(incompatibilidades,compatibilidades_con_prenda) 
 
         nuevo_lavado = elegir_lavado(lavados_con_compatibles)
@@ -84,7 +84,7 @@ def elegir_lavado(lavados):
 def ordenar_prendas(tiempos):
     # Esta linea comentada es la que ordena por tiempos
     return list({k: v for k, v in sorted(tiempos.items(), key=lambda x: x[1], reverse=True)}.keys())
-    # return list(tiempos.keys())
+    return list(tiempos.keys())
 
    
 def calcular_tiempo_total(lavados):
@@ -96,6 +96,7 @@ def calcular_tiempo_total(lavados):
 
             if tiempos[p] > max:
                 max = tiempos[p]
+        print(max)
         tiempo_total += max
 
     return tiempo_total
@@ -114,10 +115,14 @@ def analizador_problema():
     prendas_ordenadas_por_tiempo = ordenar_prendas(tiempos)
     solucion =  generador_solucion(incompatibilidades, prendas_ordenadas_por_tiempo) 
     exportador_resultado(solucion)
+
+    # for i in range(len(solucion)):
+    #     print(i, solucion[i])
+
     return solucion, calcular_tiempo_total(solucion)
 
 def exportador_resultado(lavados):
-    file = open("solucion_2.txt", "w")
+    file = open("solucion.txt", "w")
     lavado_nro = 1
     for lavado in lavados:
 
@@ -134,4 +139,5 @@ def compatibilidades(prenda, incompatibilidades, prendas_ordenadas):
             compatibilidades.append(p)
     return compatibilidades
 
+# analizador_problema()
 print(analizador_problema())
