@@ -29,6 +29,8 @@ El algoritmo propuesto arriba, si bien es de orden mucho menor a fuerza bruta, a
 Por ahora se permanece con el algoritmo original partiendo de las prendas ordenadas, dado que no se encuentra una forma de resolver el problema de este algoritmo (descripto parrafos arriba), sin aplicar un algoritmo cuyo orden sea tan grande.
 Este algoritmo se encuentra en el modulo "resolvedor.py"
 
+--- ERROR ----
+
 Se prueba una nueva alternativa. El procedimiento es equivalente al algoritmo original, con una leve diferencia, haciendo una "division" en la busqueda.
  - Se ordenan las prendas por roden de tiempos (nuevamente)
  - Se toman las 2 mas caras
@@ -38,3 +40,9 @@ Se prueba una nueva alternativa. El procedimiento es equivalente al algoritmo or
 
  Esto da un score de 352, mucho mas rapido que lo logrado previamente.
  El codigo de este algoritmo puede ser encontrado en el modulo "resolvedor3.py"
+
+ -------------
+
+ La implementacion del algoritmo planteado arriba tenia un error, y al corregirlo su puntaje subio a 566, no es tan malo, pero sigue sin ser el mejor conseguido,
+ por lo pronto se vuelve al algoritmo que da 493 implementado en el modulo "resolvedor.py"
+
