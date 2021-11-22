@@ -24,3 +24,7 @@ Pareciera tratarse de fuerza bruta, aunque se le podria aplicar back tracking pa
 Dado que el orden del algoritmo que se piensa puede ser muy grande, se me ocurre diseñar un algoritmo hibrido que use a cierta medida ambos procedimientos.
 Esto seria, partir de una prenda, y primero definir todos los lavados que se podrian hacer con esa prenda, luego iterar esta lista de lavados, y darles un "score", esto es, el mejor resultado que se puede obtener de una solucion que incluye este lavado.
 Para buscar la mejor solucion que incluye a cada lavado, se usa el algoritmo anterior. Se esta forma se busca que el algoritmo varie un poco las posibilidades, pero el orden crezca tanto.
+
+El algoritmo propuesto arriba, si bien es de orden mucho menor a fuerza bruta, aun asi no es viable dado que con el tamaño del problema, no llega a dar una solucion en un tiempo viable.
+Por ahora se permanece con el algoritmo original partiendo de las prendas ordenadas, dado que no se encuentra una forma de resolver el problema de este algoritmo (descripto parrafos arriba), sin aplicar un algoritmo cuyo orden sea tan grande.
+Este algoritmo se encuentra en el modulo "resolvedor.py"
