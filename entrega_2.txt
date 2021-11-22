@@ -28,3 +28,13 @@ Para buscar la mejor solucion que incluye a cada lavado, se usa el algoritmo ant
 El algoritmo propuesto arriba, si bien es de orden mucho menor a fuerza bruta, aun asi no es viable dado que con el tamaño del problema, no llega a dar una solucion en un tiempo viable.
 Por ahora se permanece con el algoritmo original partiendo de las prendas ordenadas, dado que no se encuentra una forma de resolver el problema de este algoritmo (descripto parrafos arriba), sin aplicar un algoritmo cuyo orden sea tan grande.
 Este algoritmo se encuentra en el modulo "resolvedor.py"
+
+Se prueba una nueva alternativa. El procedimiento es equivalente al algoritmo original, con una leve diferencia, haciendo una "division" en la busqueda.
+ - Se ordenan las prendas por roden de tiempos (nuevamente)
+ - Se toman las 2 mas caras
+ - Se forman 2 lavados nuevos que incluyen unicamente estas 2
+ - Se recorren las prendas restantes, y se intenta poner la prenda actual primero en el lavado correspondiente a segunda prenda mas pesada, y de no ser posible, se intenta poner en el siguiente.
+ - Una vez recorridas todas las prendas, de las prendas restantes se toman las 2 mas pesadas, y se reinicia el ciclo.
+
+ Esto da un score de 352, mucho mas rapido que lo logrado previamente.
+ El codigo de este algoritmo puede ser encontrado en el modulo "resolvedor3.py"
