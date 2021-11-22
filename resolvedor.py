@@ -18,9 +18,12 @@ for e in content_list:
         tiempos[int(elemento[1])] = int(elemento[2])
 
 incompatibilidades = {}
+for prenda in tiempos.keys():
+    nuevas_incompatibilidades = []
+    incompatibilidades[prenda] = nuevas_incompatibilidades
 
 for prenda in tiempos.keys():
-    incompatibilidadesPrenda = []
+    incompatibilidadesPrenda = incompatibilidades[prenda]
     for i in _incompatibilidades:
         if prenda in i:
 
@@ -28,10 +31,14 @@ for prenda in tiempos.keys():
 
             if(prendaIncompatible not in incompatibilidadesPrenda):
                 incompatibilidadesPrenda.append(prendaIncompatible)
+            
+            incompatibilidadesPrendaIncompatible = incompatibilidades[prendaIncompatible]
+            if(prenda not in incompatibilidadesPrendaIncompatible):
+                incompatibilidadesPrendaIncompatible.append(prenda)
 
 
     incompatibilidades[prenda] = incompatibilidadesPrenda
-        
+
 
     # return incompatibilidades_, tiempos
 
