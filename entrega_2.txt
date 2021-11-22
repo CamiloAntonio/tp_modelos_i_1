@@ -19,4 +19,8 @@ Cuando lo correcto seria tomar la D, y luego hacer un lavado con B y C obteniend
 
 Para evitar esto, lo que se deberia hacer es definir un lavado que minimize el tiempo total de lavados que se pueden hacer que las prendas que restan del lavado que se esta formando.
 En principio se me ocurre un algoritmo recursivo que empieze de manera similar partiendo de una prenda y viendo sus prendas compatibles, pero defina que lavado formar "ranqueando" los lavados posibles mediante el mejor resultado que se puede obtener con las prendas restantes fuera del lavado.
-Pareciera tratarse de fuerza bruta, aunque se le podria aplicar back tracking para recortar el orden.
+Pareciera tratarse de fuerza bruta, aunque se le podria aplicar back tracking para recortar el orden.     
+
+Dado que el orden del algoritmo que se piensa puede ser muy grande, se me ocurre diseñar un algoritmo hibrido que use a cierta medida ambos procedimientos.
+Esto seria, partir de una prenda, y primero definir todos los lavados que se podrian hacer con esa prenda, luego iterar esta lista de lavados, y darles un "score", esto es, el mejor resultado que se puede obtener de una solucion que incluye este lavado.
+Para buscar la mejor solucion que incluye a cada lavado, se usa el algoritmo anterior. Se esta forma se busca que el algoritmo varie un poco las posibilidades, pero el orden crezca tanto.
