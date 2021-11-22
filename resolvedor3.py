@@ -86,7 +86,7 @@ def generador_solucion3(_prendas_ordenadas):
 
         
         for prenda in prendas_ordenadas:
-            if(prenda_compatible_con_lavado(prenda, nuevo_lavado1)):
+            if(prenda_compatible_con_lavado(prenda, nuevo_lavado2)):
                 nuevo_lavado2.append(prendas_ordenadas.pop(prendas_ordenadas.index(prenda)))
 
             
